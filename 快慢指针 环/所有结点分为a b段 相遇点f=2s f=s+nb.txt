@@ -1,0 +1,7 @@
+所有结点分为a b段 相遇点f=2s f=s+nb
+287寻找重复数
+所以当初始为head,head.next时出发步是head.pre
+在第二步找入口的时候要从head.pre出发，如果没有head.pre就让slow多走一步先
+142环形链表2
+当初始化为head,head时，出发步是head
+这时，第二步找入口时fast从head出发

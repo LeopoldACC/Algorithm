@@ -1,0 +1,15 @@
+树形dp
+class Solution:
+    def rob(self, root: TreeNode) -> int:
+        return max(self.dp(root))
+    
+    def dp(self,root):
+        if not root:
+            return [0,0]
+            ###dp[0]表示不选当前结点,所以当前结点的左儿子和右儿子选不选都可，
+            ###所以存左儿子和右儿子选与不选中最大的并求和(为什么能求和呢,因为当前节点不选，左右儿子间不相连，所以两个都选了也没事)
+            ###dp[1]表示选当前结点,所以左儿子和右儿子都不能选，+左儿子与右儿子都不选
+        else:
+            l = self.dp(root.left)
+            r = self.dp(root.right)
+        return [max(l)+max(r),root.val+l[0]+r[0]]
